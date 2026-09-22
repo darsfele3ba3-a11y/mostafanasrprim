@@ -101,6 +101,22 @@
             z-index: 1;
         }
 
+        /* --- الهيدر المصغّر أثناء اللعب --- */
+        .header-main.compact {
+            padding: 8px 16px 10px 16px;
+            margin-bottom: 10px;
+        }
+        .header-main.compact .header-wave { display: none; }
+        .header-main.compact .logos-row { gap: 10px; margin-bottom: 4px; }
+        .header-main.compact .logo-img {
+            width: 40px; height: 40px; border-radius: 9px; border-width: 2px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.35);
+        }
+        .header-main.compact .title-line2 { display: none; }
+        .header-main.compact p.subtitle {
+            font-size: 0.8rem; padding: 3px 14px;
+        }
+
         /* --- الأزرار --- */
         .btn {
             background: linear-gradient(to bottom, var(--primary-light), var(--primary));
@@ -548,7 +564,7 @@
         clearQuestionTimer();
         document.getElementById('game-screen').classList.add('hidden');
         document.getElementById('home-screen').classList.remove('hidden');
-        document.getElementById('main-header').classList.remove('hidden');
+        document.getElementById('main-header').classList.remove('compact');
         document.getElementById('main-footer').classList.remove('hidden');
     }
 
@@ -621,7 +637,7 @@
         wrongAnswers = [];
 
         document.getElementById('home-screen').classList.add('hidden');
-        document.getElementById('main-header').classList.add('hidden');
+        document.getElementById('main-header').classList.add('compact');
         document.getElementById('main-footer').classList.add('hidden');
         document.getElementById('game-screen').classList.remove('hidden');
         document.getElementById('game-title').innerText = gameData.title;
